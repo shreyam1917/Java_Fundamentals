@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function clickCounter(){
+            if(typeof(storage) !== "undefined"){
+                if(sessionStorage.clickcount){
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                }else{
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "you have clicked the button" + sessionStorage.clickcount + "time(s) in this session.";
+            }else{
+                document.getElementById("result").innerHTML = "sorry, your browser does not support web storage.";
+            }        }
+    </script>
+</head>
+<body>
+
+    <form action="" id="button">
+        <button>submmit</button>
+    </form>
+    
+</body>
+</html>
